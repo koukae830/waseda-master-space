@@ -1,0 +1,12 @@
+1.1G	./.git/objects/pack/pack-2b3bbd7a8ca11f1bf6664e449a84967e221cd31c.pack
+294M	./.git/objects/pack/pack-2a3886b000b26e22069d6826d9b0bbca3a341fce.pack
+262M	./就職/WEB TEST/SPI,玉手箱-PDF/これが本当のWebテストだ!玉手箱・C-GAB.pdf
+257M	./.git/objects/11/b28ad511703527354e4f9a48ca442b87321e27
+248M	./就職/WEB TEST/SPI,玉手箱-PDF/史上最強SPI&テストセンター超実戦問題集.pdf
+244M	./就職/WEB TEST/SPI,玉手箱-PDF/これが本当のSPI3テストセンターだ!.pdf
+240M	./.git/objects/63/86f13e398c287fae86d770e51fce4a7be2dfab
+240M	./.git/objects/40/97fbf7d08555c7756b4303cd0b9078d35622fa
+237M	./就職/WEB TEST/SPI,玉手箱-PDF/史上最强玉手箱&C-GAB超実戦問題集.pdf
+225M	./.git/objects/57/ef33026451d3ea6e5a5fbb620f399826170061
+213M	./就職/WEB TEST/SPI,玉手箱-PDF/これが本当のSPI3だ！.pdf
+193M	./.git/objects/46/1ac17b6f96d82880496a075c538fe802aac131

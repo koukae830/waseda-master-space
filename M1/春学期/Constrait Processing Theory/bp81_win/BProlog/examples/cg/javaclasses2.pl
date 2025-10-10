@@ -1,0 +1,98 @@
+/********************************************************************
+    Constraint-based Graphical Programming in B-Prolog
+    %
+    draw a diagram of the hierarchy of Java AWT's classes
+*********************************************************************/
+
+go:-
+    cgWindow(Win,"java classes"),Win^topMargin #= 30, Win^leftMargin#=10, Win^height #> 500,
+    handleWindowClosing(Win),
+    generateNodes(Tree,Os),
+    cgSame(Os,fontSize,11),
+    cgTree(Tree,left_right,20,0,itemized),
+    cgSame(Os,window,Win), 
+    cgShow(Os).
+
+
+generateNodes(Tree,Os):-
+    cgLabel(Object,"Object"),
+    cgLabel(Component,"Component"),
+    cgLabel(Button,"Button"),
+    cgLabel(Canvas,"Canvas"),
+    cgLabel(Checkbox,"Checkbox"),
+    cgLabel(CheckboxMenuItem,"CheckboxMenuItem"),
+    cgLabel(Choice,"Choice"),
+    cgLabel(Container,"Container"),
+    cgLabel(Dialog,"Dialog"),
+    cgLabel(FileDialog,"FileDialog"),
+    cgLabel(Frame,"Frame"),
+    cgLabel(Label,"Label"),
+    cgLabel(Applet,"Applet"),
+    cgLabel(List,"List"),
+    cgLabel(MenuComponent,"MenuComponent"),
+    cgLabel(Menu,"Menu"),
+    cgLabel(MenuBar,"MenuBar"),
+    cgLabel(MenuItem,"MenuItem"),
+    cgLabel(Panel,"Panel"),
+    cgLabel(PopupMenu,"PopupMenu"),
+    cgLabel(Scrollbar,"Scrollbar"),
+    cgLabel(ScrollPane,"ScrollPane"),
+    cgLabel(TextArea,"TextArea"),
+    cgLabel(TextComponent,"TextComponent"),
+    cgLabel(TextField,"TextField"),
+    cgLabel(Window,"Window"),
+    Tree=node(Object,[
+              node(Component,[
+                    node(Button,[]),
+		    node(Canvas,[]),
+		    node(Checkbox,[]),
+		    node(Choice,[]),
+		    node(Container,[
+                         node(Window,[
+                              node(Frame,[]),
+			      node(Dialog,[
+				   node(FileDialog,[])])]),
+			 node(Panel,[
+			      node(Applet,[])]),
+			 node(ScrollPane,[])]),
+		    node(Label,[]),
+		    node(List,[]),
+		    node(Scrollbar,[]),
+		    node(TextComponent,[
+			 node(TextArea,[]),
+			 node(TextField,[])])]),
+	            node(MenuComponent,[
+			 node(MenuBar,[]),
+			 node(MenuItem,[
+			      node(Menu,[
+				   node(PopupMenu,[])]),
+			      node(CheckboxMenuItem,[])])])]),
+    Os=[
+    Object,
+    Component,
+    Button,
+    Canvas,
+    Checkbox,
+    CheckboxMenuItem,
+    Choice,
+	Container,
+    Dialog,
+    FileDialog,
+    Frame,
+    Label,
+    List,
+	MenuComponent,
+    Menu,
+    MenuBar,
+    MenuItem,
+    Panel,
+	Applet,
+    PopupMenu,
+    Scrollbar,
+    ScrollPane,
+    TextArea,
+    TextComponent,
+    TextField,
+    Window].
+
+handleWindowClosing(Win),{windowClosing(Win)} => cgClose(Win).

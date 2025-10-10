@@ -1,0 +1,11 @@
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.pt filter=lfs diff=lfs merge=lfs -text
+*./就職/WEB filter=lfs diff=lfs merge=lfs -text
+*.git/objects/11/b28ad511703527354e4f9a48ca442b87321e27 filter=lfs diff=lfs merge=lfs -text
+*.git/objects/40/97fbf7d08555c7756b4303cd0b9078d35622fa filter=lfs diff=lfs merge=lfs -text
+*.git/objects/46/1ac17b6f96d82880496a075c538fe802aac131 filter=lfs diff=lfs merge=lfs -text
+*.git/objects/57/ef33026451d3ea6e5a5fbb620f399826170061 filter=lfs diff=lfs merge=lfs -text
+*.git/objects/63/86f13e398c287fae86d770e51fce4a7be2dfab filter=lfs diff=lfs merge=lfs -text
+*.pack filter=lfs diff=lfs merge=lfs -text

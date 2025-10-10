@@ -1,0 +1,14 @@
+c_interface:     Examples that use the native C interface
+cg:              Examples that use CGLIB, a constraint-based graphics library for Windows-32 (no longer supported)
+clpb:            Boolean constraint programs
+clpfd:           Finite-domain constraint programs
+clpset:          Examples that use set constraints
+delay:           Examples that use delaying with action rules
+event:           Event-driven examples
+foreach:         Examples that use the foreach loop and list comprehension
+java_interface:  Examples that use the Java interface JIPL (for Windows-32 only) (no longer supported)
+lp:              Interface with GLPK LP/MIP linear programming package
+planning:        Examples that use the tabled-planning built-ins
+prolog:          Download examples from http://www.probp.com/download/benchmarks.tar.gz
+tabling:         Examples that use tabling
+

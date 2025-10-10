@@ -1,0 +1,14 @@
+This directory contains four examples that illustrate the use 
+of the JIPL interface.
+
+draw:		Use Java AWT through the JIPL interface.
+queens: 	Solve the 8-queens problem using backtracking.
+queens_fc:	solve the n-queens problem using forward checking.
+sql:		Use MySQL through the JIPL and JDBC interfaces.
+
+Each example has a separate directory that contains a program 
+written in Java, a program written in Prolog, and also a script 
+file with the extension name ".bat" that starts the programs. To 
+run the sql example, you need to install MySQL and the JDBC driver 
+for MySQL named Connector/J, and make sure an SQL server is 
+already running.

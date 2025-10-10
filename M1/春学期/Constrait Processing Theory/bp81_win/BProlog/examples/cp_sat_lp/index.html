@@ -1,0 +1,163 @@
+<html>
+<head>
+</head>
+<body>
+<h1> <b> Examples that Use the B-Prolog Interface to LP/MLP and SAT </b> </h1> <br>
+
+<br><br>
+<table width="678" border="1">
+<tr>
+<td> # </td>
+<td> Problem</td>
+<td> Program </td>
+<td> Solver used </td>
+</tr>
+
+
+<tr>
+<td> 1 </td>
+<td> <a href="http://publib.boulder.ibm.com/infocenter/odmeinfo/v3r4/index.jsp?topic=%2Filog.odms.ide.odme.help%2FContent%2FOptimization%2FDocumentation%2FODME%2F_pubskel%2FODME_pubskels%2Fstartall_ODME34_Eclipse1779.html"> Multi-Knapsack </td>
+<td> <a href="multi_knapsack.pl"> multi_knapsack.pl</a>  </td>
+<td> IP </td>
+</tr>
+
+<tr>
+<td> 2 </td>
+<td> <a href="http://publib.boulder.ibm.com/infocenter/odmeinfo/v3r4/index.jsp?topic=%2Filog.odms.ide.odme.help%2FContent%2FOptimization%2FDocumentation%2FODME%2F_pubskel%2FODME_pubskels%2Fstartall_ODME34_Eclipse1779.html">Warehouse location</a></td>
+<td> <a href="warehouse_location.pl"> warehouse_location.pl</a>  </td>
+<td> IP </td>
+</tr>
+
+<tr>
+<td> 3 </td>
+<td> <a href="http://publib.boulder.ibm.com/infocenter/odmeinfo/v3r4/index.jsp?topic=%2Filog.odms.ide.odme.help%2FContent%2FOptimization%2FDocumentation%2FODME%2F_pubskel%2FODME_pubskels%2Fstartall_ODME34_Eclipse1779.html">Fixed charge </a></td>
+<td> <a href="fixed_charge.pl"> fixed_charge.pl </a> </td>
+<td> IP </td>
+</tr>
+
+<tr>
+<td> 4 </td>
+<td> Graph coloring</td>
+<td>  <a href="color.pl"> color.pl </td>
+<td> CP </td>
+</tr>
+
+<tr>
+<td> 5 </td>
+<td> Graph coloring with Boolean variables </td>
+<td>  <a href="bcolor.pl"> bcolor.pl </td>
+<td> SAT </td>
+</tr>
+
+<tr>
+<td> 6 </td>
+<td> Maxflow</td>
+<td> <a href="maxflow.pl">maxflow.pl </a> </td>
+<td>  IP </td>
+</tr>
+
+<tr>
+<td> 7 </td>
+<td> N-Queens </td>
+<td> <a href="queens.pl">queens.pl </a> </td>
+<td> CP </td>
+</tr>
+
+
+<tr>
+<td> 8 </td>
+<td> N-Queens (Boolean variables) </td>
+<td> <a href="bqueens.pl">bqueens.pl </a> </td>
+<td> SAT </td>
+</tr>
+
+<tr>
+<td> 9 </td>
+<td> <a href="http://publib.boulder.ibm.com/infocenter/oplinfoc/v6r3/topic/ilog.odms.ide.help/examples/html/opl/foodmanufact/foodmanufact.mod.html">Oil blending</a> </td>
+<td> <a href="oil_blending.pl">oil_blending.pl </a> </td>
+<td> LP </td>
+</tr>
+
+<tr>
+<td> 10 </td>
+<td> <a href="http://publib.boulder.ibm.com/infocenter/cosinfoc/v12r2/index.jsp?topic=%2Filog.odms.ide.help%2FContent%2FOptimization%2FDocumentation%2FOPL_Studio%2F_pubskel%2Fglobals%2Feclipse_and_xplatform%2Fps_opl356.html">Product</a> </td>
+<td> <a href="product.pl">product.pl </a> </td>
+<td> LP </td>
+</tr>
+    </table>
+
+
+
+
+<h3> Built-ins for modeling for linear programming/mixed integer programming and SAT solvers </h3>
+<UL>
+<LI> Domain declaration
+<UL>
+    <LI>  X :: L..U              --  integer domains
+    <LI>  [X1,...,Xn] :: L..U    
+    <LI> lp_domain(X,L,U)      -- real domains
+    <LI>    lp_domain([X1,...,Xn],L,U)
+</UL>
+
+<LI> Constraints
+<UL>
+    <LI> $\ E                   --  not 
+    <LI>        E $/\ E         --  and 
+    <LI>        E $\/ E         --  or 
+    <LI>        E $=> E         --  imply 
+    <LI>        E $<=> E        --  equivalent 
+    <LI>        E $\ E          --  xor 
+    <LI>        E $= E          --  arithmetic constraints
+    <LI>        E $\= E                
+    <LI>        E $>= E                
+    <LI>        E $> E                
+    <LI>        E $=< E                
+    <LI>        E $< E                
+    <LI>        $alldifferent(L)  -- global
+</UL>
+<LI> Solver invocation calls
+<UL>
+    <LI> lp_solve(Options,L), lp_solve(L), ip_solve(Options,L), or ip_solve(L)
+<pre><code>
+             Start the LP/MIP solver to find a valuation for the variables L 
+	     that satisfies the accumulated constraints. The following options 
+	     are allowed:
+	          min(Exp)    -- minimize Exp
+	          max(Exp)    -- maximize Exp
+	          dump        -- dump the model in some format
+                  file(File)  -- dump the model to File
+                  format(lp)  -- dump the model in the CPLEX lp format 
+                  format(clp) -- dump the model in CLP format (IP models only)
+</code></pre> 
+
+    <LI>        sat_solve(Options,L) or sat_solve(L)
+<pre><code>
+	     Start the Sat solver to find a valuation for the variables L
+	     that satisfies the accumulated constraints. If no SAT solver 
+	     is embedded into B-Prolog, the OS command 'satsolver' must be 
+	     provided to invoke a SAT solver on a CNF file. The following 
+	     options are allowed:
+	         min(Exp)       -- minimize Exp
+	         max(Exp)       -- maximize Exp
+	         dump           -- dump the set of constraints in the CNF format
+	         file(File)     -- dump to File
+	         cmp_time(Time) -- the compile time is Time
+	         report(Pred)   -- call Pred each time a valuation for Vs is 
+	                           found during optimization.
+</code></pre> 
+
+      <LI>    cp_solve(Options,L) or cp_solve(L)
+<pre><code>
+	     Start the CP solver to find a valuation for the variables L
+	     that satisfies the accumulated constraints, where Options may
+	     contain only min(Exp) or max(Exp).
+</code></pre> 
+
+      <LI>        ip_solve_all(L,Bag), sat_solve_all(L,Bag), cp_solve_all(L,Bag)
+<pre><code>
+             Find all the solutions of L using a designated solver.
+</code></pre> 
+</UL>
+</UL>
+</body>
+</html>
